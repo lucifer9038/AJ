@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <!-- Define Course Bean -->
+    <bean id="course" class="mypack.Course">
+        <constructor-arg value="Java Programming"/>
+    </bean>
+
+    <!-- Define Student Bean and Autowire the Course Bean -->
+    <bean id="student" class="mypack.Student">
+        <property name="studentName" value="John Doe"/>
+        <property name="course" ref="course"/>
+    </bean>
+
+</beans>
